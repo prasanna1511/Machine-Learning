@@ -43,6 +43,6 @@ Reinforcement Learning involves training an agent to make decisions by interacti
 - **Objective**: Learn policy is cumulative reward.
 - **Applications**: Robotics (e.g., autonomous navigation), games (e.g., chess, Go).
   ------
-  ## Focus on **Supervised Learning** and **Unsupervised Learning**
+  #### This Repo focuses on **Supervised Learning** and **Unsupervised Learning**
   ------
 For math look at readme of each algorithms for better understanding
