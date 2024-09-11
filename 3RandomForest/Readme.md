@@ -39,7 +39,8 @@ Information Gain helps in choosing the best attribute to split a node. It is giv
   
 **Split Node Criteria**
 
-To split a node, calculate the gain for each attribute and select the one with the highest gain:
+To split a node, calculate the gain for each attribute and select the one with the highest gain
+
 $$
 \text{BestGain} = max(Gain(D, attr))
 $$
@@ -56,6 +57,7 @@ The subset of examples is empty.
 **Prediction**
 
 To predict the class of a given input x, traverse the tree from the root to a leaf node:
+
 $$
 \text{Prediction(x) }= Class(LeafNodeReachedby\text{x})$$
 
@@ -63,6 +65,7 @@ $$
 **Accuracy**
 
 Accuracy if correctly classified 
+
 $$
 \text{accuracy} = \left(\frac{\text{number of correct predictions}}{\text{total predictions}}\right) \times 100
 $$
