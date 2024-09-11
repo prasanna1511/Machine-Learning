@@ -1,41 +1,50 @@
-## Logistic Regression: Binary and Multi-Class Classification
 
-- Overview
-- Mathematical Background
-- Binary Logistic Regression
-- Multi-Class Logistic Regression
+#### 2. **Logistic Regression**
 
-## Overview
-
-- #### Logistic regression is a classification algorithm in machine learning
-
-Binary Logistic Regression: 
-Sigmoid function will approximate the given input to either 0 or 1
-
-Multi-Class Logistic Regression
-Used for classifying instances into more than two classes using the softmax function. Here the probabilty of each input is calculated indivaidually and then approximated to 1.
+- **Type**: Supervised Learning (Classification)
 
 
+The `LogisticRegression` and `MultiClassLogisticRegression` performs classification tasks. Logistic Regression is used for binary classification, while Multiclass Logistic Regression extends this approach to handle multiple classes. These models are useful for tasks object detection, image classification
 
-## Mathematical Equations
+### 1. Logistic Regression
 
-### Binary Logistic Regression
+
+**Logistic Regression** is a linear model used for binary classification problems. It predicts the probability that a given input belongs to a particular class using the logistic (sigmoid) function maps any input to either 0 or 1
+
 
 #### Sigmoid Function
 
-The **sigmoid** function is used to model the probability of a binary outcome. It is defined as:
+The **sigmoid** function is used to model the probability of a binary outcome.
 
 $$
 \sigma(z) = \frac{1}{1 + e^{-z}}
 $$
 
-#### Gradient of the Sigmoid Function
 
-The gradient of the binary cross-entropy loss with respect to each parameter \(\theta_j\) is given by:
 
-$$
-\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)}
-$$
+- **Binary Cross-Entropy Loss**:
+
+  $$
+  J(\theta) = - \frac{1}{m} \sum_{i=1}^{m} \left[y^{(i)} \log(h_\theta(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_\theta(x^{(i)}))\right]
+  $$
+
+
+- **Gradient Descent**:
+
+  The parameters are updated by taking steps proportional to the negative gradient of the loss function:
+
+  $$
+  \theta_j = \theta_j - \alpha \cdot \frac{\partial J(\theta)}{\partial \theta_j}
+  $$
+
+
+- **Gradient of the Cost Function**:
+
+  The gradient of the cost function with respect to each parameter \( \theta_j \) is given by:
+
+  $$
+  \frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) x_j^{(i)}
+  $$
 
 ### Multi-Class Logistic Regression
 
@@ -48,11 +57,27 @@ $$
 $$
 
 
+#### Training the Model
 
-#### Gradient of the Softmax Function
+- **Gradient Calculation**:
 
-The gradient of the cross-entropy loss with respect to each parameter \(\theta_j\) is given by:
+  The gradient for multiclass logistic regression is computed similarly to binary logistic regression but for each class. The gradient of the cost function is:
 
-$$
-\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^m (h_\theta(x^{(i)})_j - y^{(i)}_j) x^{(i)}
-$$
+  $$
+  \text{gradient} = \frac{1}{m} \sum_{i=1}^{m} x^T \cdot (y_{\text{pred}} - y)
+  $$
+
+  Where:
+  -  y_pred  are the predicted probabilities for each class.
+  - y  are true labels.
+
+#### Evaluation
+
+- **Accuracy**:
+
+  The model's accuracy is calculated by comparing the predicted classes with the true classes:
+
+  $$
+  \text{accuracy} = \left(\frac{\text{number of correct predictions}}{\text{total predictions}}\right) \times 100
+  $$
+
