@@ -57,7 +57,7 @@ The subset of examples is empty.
 
 To predict the class of a given input x, traverse the tree from the root to a leaf node:
 $$
-\text{Prediction(x) }= Class(LeafNodeReachedby\text{x})$$
+Prediction(x)= Class(LeafNodeReachedbyx)$$
 
 
 **Accuracy**
