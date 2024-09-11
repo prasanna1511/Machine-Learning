@@ -78,6 +78,6 @@ $$
   The model's accuracy is calculated by comparing the predicted classes with the true classes:
 
   $$
-  \text{accuracy} = \left(\frac{\text{number of correct predictions}}{\text{total predictions}}\right) \times 100
+  accuracy = \left(\frac{\text{number of correct predictions}}{\text{total predictions}}\right) \times 100
   $$
 
