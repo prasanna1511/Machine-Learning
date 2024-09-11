@@ -1,1 +1,0 @@
-zip -r ex5_mlrcv_submission.zip mlrcv/*.py  ex5_kmeans.ipynb
