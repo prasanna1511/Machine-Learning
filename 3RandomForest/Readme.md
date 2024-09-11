@@ -21,6 +21,7 @@ Entropy measures the impurity of a dataset
 $$
 H(D) = - \sum_{i=1}^{C} p_i \log_2(p_i)
 $$
+
 Where:
 
 c is the number of classes.
